@@ -1,0 +1,33 @@
+
+<div class="profile-container mat-elevation-z2">
+    <div class="profile-header">
+      <!-- <mat-card-header>
+        <img mat-card-avatar src="profile-picture.jpg" alt="Profile Picture">
+        <mat-card-title>{{ user.name }}</mat-card-title>
+        <mat-card-subtitle>{{ user.role }}</mat-card-subtitle>
+      </mat-card-header> -->
+    </div>
+  
+    <mat-card class="profile-details">
+        <div class="detail">
+            <span class="detail-label">First Name:</span>
+            <span class="detail-value">{{ user.firstName }}</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Last Name:</span>
+            <span class="detail-value">{{ user.lastName }}</span>
+          </div>
+
+      <div class="detail">
+        <span class="detail-label">Location:</span>
+        <span class="detail-value">{{ user.location }}</span>
+      </div>
+      <div class="detail">
+        <span class="detail-label">Email:</span>
+        <span class="detail-value">{{ user.email }}</span>
+      </div>
+      <a routerLink="/wishlist">My List</a>
+      
+    </mat-card>
+  </div>
+  

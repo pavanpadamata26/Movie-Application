@@ -1,0 +1,24 @@
+
+<form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+    <label for="movieTitle">Movie Title:</label>
+    <input type="text" id="movieTitle" formControlName="movieTitle" required>
+    <!-- <label for="movieId">Movie Id:</label>
+    <input type="text" id="movieId" formControlName="movieId" required> -->
+  
+    <label for="releaseYear">Release Year:</label>
+    <input type="text" id="releaseYear" formControlName="releaseYear" pattern="^[0-9]{4}$">
+  
+    <label for="genre">Genre:</label>
+    <input type="text" id="genre" formControlName="genre">
+  
+    <label for="movieDescription">Description:</label>
+    <textarea id="movieDescription" formControlName="movieDescription"></textarea>
+  
+    <label for="movieRating">Rating:</label>
+    <input type="text" id="movieRating" formControlName="movieRating" pattern="^[0-9](\.[0-9]{1,2})?$">
+  
+    <label for="movieImagePath">Image Path:</label>
+    <input type="file" id="file" formControlName="movieImagePath" (change)="onFileSelected($event)" >
+  
+    <button   type="submit">submit</button>
+  </form>

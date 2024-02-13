@@ -1,0 +1,20 @@
+<header>
+<div class="logo">
+    <p routerLink="/movie-listing-page">MovieWorld</p></div>
+    <!-- <app-filter [genres]="genres" [selectedGenres]="selectedGenres" (GenreEvent)="filterByGenre($event)"></app-filter> -->
+    <app-filter></app-filter>
+    <app-search (searchQuery)="onSearch($event)" class="absolute-search"></app-search>
+    
+<ul class="navigation">
+  <!-- <app-search (searchEvent)="onSearch($event)"></app-search> -->
+   <li><a>Tv Shows</a></li>
+   <li><a>Movies</a></li>
+   <li><a>Latest</a></li>
+   <li><a routerLink="/wishlist" *ngIf="authservice.isLoggedInValue">My List</a></li>
+  <li>
+    <a routerLink="/login" *ngIf="!(authservice.isLoggedIn | async)">Login</a>
+    <a  *ngIf="(authservice.isLoggedIn | async)" (click)="userLogout()">Logout</a>
+      <mat-icon class="icon" routerLink="/profile-page">person</mat-icon>
+  </li>
+  </ul>
+  </header>

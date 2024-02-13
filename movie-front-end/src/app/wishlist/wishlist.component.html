@@ -1,0 +1,25 @@
+<div *ngIf="wishlist" class="wishlist-container">
+
+<h2>My WatchList</h2>
+<div class="list-movies">
+    <mat-card *ngFor="let movie of wishlist.movies" class="list-movie">
+      <div class="list-movie-details">
+        
+        <img id="picture" mat-card-image [src]="'http://localhost:8090/' + movie.movieImagePath" alt="{{ movie.movieTitle }}">
+        <div class="list-data">
+          <strong>Product Name:</strong>{{ movie.movieTitle }}  <br>
+          <strong>Quantity:</strong> {{ movie.movieDescription }} <br>
+          <strong>Price:</strong> {{ movie.movieRating }} <br>
+        </div>
+        <button id="deletebtn" (click)="deleteItem(movie)">
+          <!-- <mat-icon>delete</mat-icon>  -->
+        </button>
+        
+      </div>
+      <hr>
+    </mat-card>
+  </div>
+  </div>
+  
+
+

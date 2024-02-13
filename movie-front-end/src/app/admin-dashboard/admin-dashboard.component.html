@@ -1,0 +1,63 @@
+<h2>Welcome To Admin DashBoard</h2>
+<ng-container *ngIf="showMovieAdd">
+    <app-movieadd (MovieAdded)="handleMovieAdded()"></app-movieadd>
+  </ng-container>
+
+<div class="buttons">
+    <button class="custom-button" mat-raised-button style="background-color: #2196F3; color: white;" (click)="openDialog()">Add Movie</button>
+    <button class="custom-button" mat-raised-button style="background-color: #2196F3; color: white;"  (click)="users()">All Users</button>
+</div>
+
+ 
+
+
+<mat-card class="mat-card">
+    <mat-card-header></mat-card-header>
+    <mat-card-content>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="movieId" class = "mat-column-movieId">
+                <th mat-header-cell *matHeaderCellDef>Movie Id</th>
+                <td mat-cell *matCellDef="let element">{{ element.movieId }}</td>
+            </ng-container>
+            <ng-container matColumnDef="movieTitle" class = "mat-column-movieTitle">
+                <th mat-header-cell *matHeaderCellDef>Movie Title</th>
+                <td mat-cell *matCellDef="let element">{{ element.movieTitle }}</td>
+            </ng-container>
+            <ng-container matColumnDef="releaseYear">
+                <th mat-header-cell *matHeaderCellDef>Release Year</th>
+                <td mat-cell *matCellDef="let element">{{ element.releaseYear }}</td>
+            </ng-container>
+            <ng-container matColumnDef="genre">
+                <th mat-header-cell *matHeaderCellDef>Genre</th>
+                <td mat-cell *matCellDef="let element">{{ element.genre }}</td>
+            </ng-container>
+            <ng-container matColumnDef="movieDescription" class="movie-description-column">
+                <th mat-header-cell *matHeaderCellDef>Moive Description</th>
+                <td mat-cell *matCellDef="let element">{{ element.movieDescription}}</td>
+            </ng-container>
+            <ng-container matColumnDef="movieRating">
+                <th mat-header-cell *matHeaderCellDef>Movie Rating</th>
+                <td mat-cell *matCellDef="let element">{{ element.movieRating }}</td>
+            </ng-container>
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let element">
+                    <button  (click)="deleteMovie(element.movieId)" mat-raised-button color="warn">Delete</button>
+                    <button (click)="openEditDialog(element)" mat-raised-button color="primary">Edit</button>
+                    <!-- <button mat-button [routerLink]="['/movie-edit', movie.movieId]" [queryParams]="{movieId:element.movieId}"></button> -->
+                </td>
+            </ng-container>
+           
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            
+
+        </table>
+        
+    </mat-card-content>
+    <mat-card-footer>
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+    </mat-card-footer>
+</mat-card>
+
+

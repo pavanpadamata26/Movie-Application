@@ -1,0 +1,28 @@
+/* user-profile.component.css */
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+  }
+  
+  .profile-header {
+    text-align: center;
+  }
+  
+  .detail {
+    margin-bottom: 10px;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .detail-value {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .detail-value:hover {
+    text-decoration: underline;
+  }
+  

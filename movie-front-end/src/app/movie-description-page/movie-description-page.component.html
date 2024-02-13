@@ -1,0 +1,24 @@
+
+<div class="movie-container">
+    <mat-card>
+        <img mat-card-image  id="picture" [src]="'http://localhost:8090/' + movie.movieImagePath" alt="{{ movie.movieTitle }}">
+    </mat-card>
+    <mat-card-content>
+        <h2>{{movie.movieTitle}}</h2>
+        <p>{{movie.movieDescription}}</p>
+        <p>{{movie.movieRating}}</p>
+        <p> any reviews</p>
+    </mat-card-content>
+    <div *ngIf="loginStatus.isLoggedIn">
+        <button class="add-to-wishlist-button"   routerLink="/wishlist">
+            <mat-icon>bookmark</mat-icon>
+        </button>
+    </div>
+    
+   
+    <div *ngIf="!loginStatus.isLoggedIn">
+        <button class="add-to-wishlist-button"   routerLink="/login">
+            <mat-icon>bookmark</mat-icon>
+        </button>
+    </div>
+</div>

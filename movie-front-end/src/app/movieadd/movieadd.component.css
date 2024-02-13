@@ -1,0 +1,140 @@
+/* 
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease;
+  }
+  
+ 
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  label, input, textarea, button {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  
+ 
+  label:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  input:nth-child(2),
+  textarea:nth-child(4),
+  input:nth-child(6),
+  input:nth-child(8) {
+    animation-delay: 0.2s;
+  }
+  
+  button:nth-child(9) {
+    animation-delay: 0.3s;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-top: 16px;
+    color: #2196F3;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #2196F3; 
+  }
+  
+  button {
+    margin-top: 16px;
+    padding: 12px;
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #1565C0;
+  }
+   */
+
+   /* Add your custom styles here */
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2196F3;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2196F3;
+}
+
+button {
+  background-color: #2196F3;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1565C0;
+}
+
+/* Optional: Add media queries for responsiveness */
+@media screen and (max-width: 600px) {
+  form {
+    width: 100%;
+    max-width: none;
+  }
+}
